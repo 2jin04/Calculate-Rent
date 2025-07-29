@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\Api\AuthController;
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
+Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/login', function () {
     return view('/auth/login');
 });

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
-abstract class HomeController
+use Illuminate\Http\Request;
+
+class HomeController
 {
-    //
+    public function index() {
+        return view('client.home.home');
+    }
 }
