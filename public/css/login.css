@@ -1,0 +1,218 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	background: linear-gradient(180deg, 
+		#0a0a23 0%, 
+		#1a1a3a 30%, 
+		#2a1a4a 60%, 
+		#0f0f2a 100%);
+	position: relative;
+	font-family: 'Arial', sans-serif;
+}
+
+.moon {
+	position: absolute;
+	top: 15%;
+	right: 20%;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 30%, 
+		#fff 0%, 
+		#f5f5dc 40%, 
+		#e6e6fa 70%, 
+		#d3d3d3 100%);
+	box-shadow: 
+		0 0 30px rgba(255, 255, 255, 0.3),
+		0 0 60px rgba(255, 255, 255, 0.2),
+		0 0 90px rgba(255, 255, 255, 0.1);
+	animation: moonGlow 4s ease-in-out infinite alternate;
+}
+
+.moon::before {
+	content: '';
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: rgba(169, 169, 169, 0.4);
+	box-shadow: 
+		15px 10px 0 -2px rgba(169, 169, 169, 0.3),
+		-5px 20px 0 -4px rgba(169, 169, 169, 0.2),
+		25px -5px 0 -3px rgba(169, 169, 169, 0.25);
+}
+
+@keyframes moonGlow {
+	0% {
+		box-shadow: 
+			0 0 30px rgba(255, 255, 255, 0.3),
+			0 0 60px rgba(255, 255, 255, 0.2),
+			0 0 90px rgba(255, 255, 255, 0.1);
+	}
+	100% {
+		box-shadow: 
+			0 0 40px rgba(255, 255, 255, 0.4),
+			0 0 80px rgba(255, 255, 255, 0.3),
+			0 0 120px rgba(255, 255, 255, 0.2);
+	}
+}
+
+.star {
+	position: absolute;
+	background: white;
+	border-radius: 50%;
+	animation: twinkle linear infinite;
+}
+
+.star::before,
+.star::after {
+	content: '';
+	position: absolute;
+	background: white;
+	border-radius: 50%;
+}
+
+.star::before {
+	width: 100%;
+	height: 2px;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+.star::after {
+	width: 2px;
+	height: 100%;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+}
+
+@keyframes twinkle {
+	0%, 100% {
+		opacity: 0.3;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+}
+
+.shooting-star {
+	position: absolute;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, white, transparent);
+	border-radius: 1px;
+	animation: shoot 3s linear infinite;
+}
+
+@keyframes shoot {
+	0% {
+		transform: translateX(-100px) translateY(0);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(calc(100vw + 100px)) translateY(50px);
+		opacity: 0;
+	}
+}
+
+.cloud {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50px;
+	opacity: 0.3;
+	animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+	0% {
+		transform: translateX(-100px);
+	}
+	100% {
+		transform: translateX(calc(100vw + 100px));
+	}
+}
+
+.cloud::before,
+.cloud::after {
+	content: '';
+	position: absolute;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50px;
+}
+
+.login-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 1000;
+}
+
+.login-title {
+	font-size: 48px;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 30px;
+	text-shadow: 
+		0 0 10px rgba(255, 255, 255, 0.5),
+		0 0 20px rgba(255, 255, 255, 0.3),
+		0 0 30px rgba(255, 255, 255, 0.2);
+	animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+	0% {
+		text-shadow: 
+			0 0 10px rgba(255, 255, 255, 0.5),
+			0 0 20px rgba(255, 255, 255, 0.3),
+			0 0 30px rgba(255, 255, 255, 0.2);
+	}
+	100% {
+		text-shadow: 
+			0 0 15px rgba(255, 255, 255, 0.7),
+			0 0 30px rgba(255, 255, 255, 0.5),
+			0 0 45px rgba(255, 255, 255, 0.3);
+	}
+}
+
+.google-logo {
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+	animation: logoGlow 2s ease-in-out infinite alternate;
+	transition: transform 0.3s ease;
+}
+
+.google-logo:hover {
+	transform: scale(1.1);
+}
+
+@keyframes logoGlow {
+	0% {
+		filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+		opacity: 0.8;
+		scale: 0.85;
+	}
+	100% {
+		filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+		opacity: 1.1;
+	}
+}
