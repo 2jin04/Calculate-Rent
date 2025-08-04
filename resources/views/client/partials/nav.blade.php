@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>macOS Liquid Glass Effect</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
+ <!-- Menu -->
     <nav class="fixed bottom-10 left-1/2 -translate-x-1/2">
       <div class="liquidGlass-wrapper dock">
         <div class="liquidGlass-effect"></div>
@@ -101,5 +91,3 @@
         />
       </filter>
     </svg>
-  </body>
-</html>

@@ -26,7 +26,7 @@ class SocialAuthController extends Controller
             
             Auth::login($user);
             
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/rooms');
             
         } catch (\Exception $e) {
             return redirect('/login')->with('error', 'Đăng nhập Google thất bại');

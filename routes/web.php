@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\Api\AuthController;
 
@@ -20,3 +21,11 @@ Route::get('/auth/facebook', [SocialAuthController::class, 'redirectToFacebook']
 Route::get('/auth/facebook/callback', [SocialAuthController::class, 'handleFacebookCallback']);
 
 Route::get('/auth/{provider}/callback', [AuthController::class, 'handleOAuthCallback']);
+    Route::get('/rooms', [RoomController::class, 'index']);
+    Route::post('/rooms', [RoomController::class, 'store']);
+Route::middleware('auth')->group(function () {
+    
+    Route::get('/rooms/{room}', [RoomController::class, 'show']);
+    Route::put('/rooms/{room}', [RoomController::class, 'update']);
+    Route::post('/rooms/join', [RoomController::class, 'join']);
+});
