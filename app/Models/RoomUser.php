@@ -12,13 +12,13 @@ class RoomUser extends Pivot
         'room_id',
         'user_id',
         'role',
-        'join_at',
+        'joined_at',
         'created_at',
         'update_at'
     ];
 
     protected $casts = [
-        'join_at' => 'datetime',
+        'joined_at' => 'datetime',
         'created_at' => 'datetime',
         'update_at' => 'datetime',
     ];

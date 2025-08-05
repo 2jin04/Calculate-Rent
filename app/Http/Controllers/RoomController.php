@@ -14,11 +14,10 @@ class RoomController extends Controller
 {
     protected $roomService;
 
-    // public function __construct(RoomService $roomService)
-    // {
-    //     $this->roomService = $roomService;
-    //     $this->middleware('auth');
-    // }
+    public function __construct(RoomService $roomService)
+    {
+        $this->roomService = $roomService;
+    }
 
     public function index()
     {

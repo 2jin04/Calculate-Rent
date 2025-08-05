@@ -7,6 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-300 min-h-screen flex items-center justify-center">
+    @if (Auth::check())
+    <h2>Xin chào {{ Auth::user()->name }}!</h2>
+    <h3>Email: {{ Auth::user()->email }}</h3>
+    <a href="{{ route('logout') }}">Đăng xuất</a>
+    @endif
     <div class="flex gap-20">
         <!-- Tạo phòng mới -->
         <div class="bg-white rounded-3xl p-3 w-64 shadow-sm">
@@ -48,5 +53,7 @@
             </button>
         </div>
     </div>
+    
+    @include('client.layouts.alert')
 </body>
 </html>

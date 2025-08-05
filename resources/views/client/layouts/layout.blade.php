@@ -6,6 +6,9 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CDN SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         @keyframes slideUp {
             from {
@@ -43,7 +46,8 @@
 <body>
     @include('client.partials.nav')
     @yield('content')
-
+    
+    @include('client.layouts.alert')
     <script>
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {

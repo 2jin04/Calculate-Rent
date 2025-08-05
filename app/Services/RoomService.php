@@ -21,25 +21,25 @@ class RoomService
                 'balance' => $data['balance'] ?? 0.00,
                 'created_by' => $creator->id,
             ]);
+
+            //Tạo link tham gia
+            $room->join_link = $room->generateJoinLink();
+            $room->save();
+    
+            //Thêm người tạo room với role admin
+            $room->members()->attach($creator->id, [
+                'role' => 'admin',
+                'joined_at' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+    
+            return $room->load(['creator', 'members']);
         });
-
-        //Tạo link tham gia
-        $room->join_link = $room->generateJoinLink();
-        $room->save();
-
-        //Thêm người tạo room với role admin
-        $room->members()->attach($creator->id, [
-            'role' => 'admin',
-            'join_at' => now(),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        return $room_load(['creator', 'members']);
     }
 
     //Vào room với code
-    public function joinRoom(string $code, User $user, string $role = 'member') 
+    public function joinRoom(string $code, User $user, string $role = 'members') 
     {
         return DB::transaction(function () use ($code, $user, $role) {
             $room = Room::where('code', $code)->fisrtOrFail();

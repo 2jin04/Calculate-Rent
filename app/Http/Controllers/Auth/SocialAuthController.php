@@ -26,10 +26,10 @@ class SocialAuthController extends Controller
             
             Auth::login($user);
             
-            return redirect()->intended('/rooms');
+            return redirect()->intended('/rooms')->with('toast_success', 'Đăng nhập thành công');
             
         } catch (\Exception $e) {
-            return redirect('/login')->with('error', 'Đăng nhập Google thất bại');
+            return redirect('/login')->with('toast_error', 'Đăng nhập Google thất bại');
         }
     }
     
@@ -87,5 +87,11 @@ class SocialAuthController extends Controller
             'provider_id' => $socialUser->getId(),
             $provider . '_id' => $socialUser->getId(),
         ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login')->with('toast_success', 'Đăng xuất thành công!');
     }
 }

@@ -31,10 +31,10 @@ class Room extends Model
     }
 
     //kết nối với RoomUser
-    public function member()
+    public function members()
     {
         return $this->belongsToMany(User::class, 'room_user')
-                    ->withPivot('role', 'join_at', 'created_at', 'updated_at')
+                    ->withPivot('role', 'joined_at', 'created_at', 'updated_at')
                     ->withTimestamps();
     }
 

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate Rent</title>
     <link rel="stylesheet" href="/css/login.css">
+    <!-- CDN SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -24,6 +27,7 @@
     </div>
 
     <script src="/js/login.js"></script>
+    @include('client.layouts.alert')
 </body>
 
 </html>
