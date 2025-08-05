@@ -3,681 +3,108 @@
 @section('title', 'Danh sách chi tiêu')
 
 @section('content')
-    <div class="max-w-7xl bg-gradient-to-br from-blue-50 to-indigo-100 mx-auto p-4">
-        <!-- Header -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <h1 class="text-2xl font-bold text-gray-800 mb-2">Quản lý Chi tiêu Phòng</h1>
-            <p class="text-gray-600">Theo dõi và quản lý chi tiêu chung của phòng</p>
-        </div>
-
-        <!-- Summary -->
-        <div class="rounded-lg mb-6 text-white">
-            <div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        
-                <!-- Traffic Card -->
-                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-100 opacity-0">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Tổng chi tiêu</div>
-                        <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white text-lg">📊</div>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">350.000</div>
-                    <div class="flex items-center gap-1.5 text-sm font-medium">
-                        <span class="text-green-500 text-xs">▲</span>
-                        <span class="text-green-500">3.48%</span>
-                        <span class="text-gray-400 ml-1">So với hôm qua</span>
-                    </div>
-                </div>
-        
-                <!-- New Users Card -->
-                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-200 opacity-0">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Quỹ còn lại</div>
-                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white text-lg">👥</div>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">200,000</div>
-                    <div class="flex items-center gap-1.5 text-sm font-medium">
-                        <span class="text-red-500 text-xs">▼</span>
-                        <span class="text-red-500">3.48%</span>
-                        <span class="text-gray-400 ml-1">Since last week</span>
-                    </div>
-                </div>
-        
-                <!-- Sales Card -->
-                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-300 opacity-0">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Chi tiêu của bạn</div>
-                        <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white text-lg">💰</div>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">924.000</div>
-                    <div class="flex items-center gap-1.5 text-sm font-medium">
-                        <span class="text-red-500 text-xs">▼</span>
-                        <span class="text-red-500">1.10%</span>
-                        <span class="text-gray-400 ml-1">Since yesterday</span>
-                    </div>
-                </div>
-        
-                <!-- Performance Card -->
-                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-400 opacity-0">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Quỹ còn lại của bạn</div>
-                        <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center text-white text-lg">%</div>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">490.000</div>
-                    <div class="flex items-center gap-1.5 text-sm font-medium">
-                        <span class="text-green-500 text-xs">▲</span>
-                        <span class="text-green-500">12%</span>
-                        <span class="text-gray-400 ml-1">Since last month</span>
-                    </div>
-                </div>
-        
+    <div class="bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="max-w-7xl mx-auto p-4">
+            <!-- Header -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Quản lý Chi tiêu Phòng</h1>
+                <p class="text-gray-600">Theo dõi và quản lý chi tiêu chung của phòng</p>
             </div>
-        </div>
 
-        <!-- Filters -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <div class="flex items-center mb-4">
-                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
-                </svg>
-                <h2 class="text-lg font-semibold text-gray-800">Bộ lọc</h2>
-            </div>
+            <!-- Summary -->
+            <div class="rounded-lg mb-6 text-white">
+                <div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- Date Filter -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Thời gian</label>
-                    <select id="dateRange" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="7days">7 ngày gần nhất</option>
-                        <option value="30days">30 ngày gần nhất</option>
-                        <option value="thisMonth">Tháng này</option>
-                        <option value="custom">Tùy chọn</option>
-                    </select>
-                    
-                    <div id="customDateRange" class="mt-2 grid grid-cols-2 gap-2 hidden">
-                        <input type="date" id="startDate" class="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Từ ngày">
-                        <input type="date" id="endDate" class="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Đến ngày">
-                    </div>
-                </div>
-
-                <!-- Member Filter -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Thành viên</label>
-                    <select id="memberFilter" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="all">Tất cả thành viên</option>
-                        <option value="Nguyễn Văn A">Nguyễn Văn A</option>
-                        <option value="Trần Thị B">Trần Thị B</option>
-                        <option value="Lê Văn C">Lê Văn C</option>
-                        <option value="Phạm Thị D">Phạm Thị D</option>
-                    </select>
-                </div>
-
-                <!-- Price Range Filter -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Khoảng giá (VNĐ)</label>
-                    <div class="grid grid-cols-2 gap-2">
-                        <input type="number" id="minAmount" placeholder="Từ" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <input type="number" id="maxAmount" placeholder="Đến" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white rounded-lg flex justify-between items-center p-6 mb-6">
-            <h1 class="text-2xl font-bold text-gray-800 mb-2">Danh sách Chi tiêu</h1>
-            <!-- Add Expense Button -->
-            <button id="addExpenseBtn" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium flex items-center transition-colors shadow-sm">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-                Thêm chi tiêu mới
-            </button>
-        </div>
-
-        <!-- Expense List Table - Desktop -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden hidden md:block">
-            <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <!-- Table Header -->
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                STT
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Đồ mua
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Số tiền (VNĐ)
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Người chi
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Nguồn tiền
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Ngày mua
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Thành viên chia
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Tiền/người
-                            </th>
-                        </tr>
-                    </thead>
-                    
-                    <!-- Table Body -->
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                1
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm font-medium text-gray-900">Đồ ăn tối</div>
-                                <div class="text-sm text-gray-500">Cơm tối cho cả nhóm</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-lg font-bold text-blue-600">150,000 ₫</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-8 w-8">
-                                        <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
-                                            <span class="text-xs font-medium text-white">A</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                                    Tiền mặt
-                                </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                25/07/2024
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex flex-wrap gap-1">
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                </div>
-                                <div class="text-xs text-gray-500 mt-1">3 người</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm font-bold text-green-600">50,000 ₫</span>
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                2
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm font-medium text-gray-900">Điện thoại</div>
-                                <div class="text-sm text-gray-500">Thẻ điện thoại</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-lg font-bold text-blue-600">80,000 ₫</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-8 w-8">
-                                        <div class="h-8 w-8 rounded-full bg-pink-500 flex items-center justify-center">
-                                            <span class="text-xs font-medium text-white">B</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <div class="text-sm font-medium text-gray-900">Trần Thị B</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
-                                    Chuyển khoản
-                                </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                24/07/2024
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex flex-wrap gap-1">
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                </div>
-                                <div class="text-xs text-gray-500 mt-1">2 người</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm font-bold text-green-600">40,000 ₫</span>
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                3
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm font-medium text-gray-900">Mua sắm</div>
-                                <div class="text-sm text-gray-500">Đồ dùng sinh hoạt</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-lg font-bold text-blue-600">200,000 ₫</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-8 w-8">
-                                        <div class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center">
-                                            <span class="text-xs font-medium text-white">C</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <div class="text-sm font-medium text-gray-900">Lê Văn C</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">
-                                    Thẻ tín dụng
-                                </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                20/07/2024
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex flex-wrap gap-1">
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
-                                </div>
-                                <div class="text-xs text-gray-500 mt-1">4 người</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm font-bold text-green-600">50,000 ₫</span>
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                4
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm font-medium text-gray-900">Taxi</div>
-                                <div class="text-sm text-gray-500">Về nhà cuối tuần</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-lg font-bold text-blue-600">120,000 ₫</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-8 w-8">
-                                        <div class="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center">
-                                            <span class="text-xs font-medium text-white">D</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <div class="text-sm font-medium text-gray-900">Phạm Thị D</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                    Ví điện tử
-                                </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                22/07/2024
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex flex-wrap gap-1">
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
-                                </div>
-                                <div class="text-xs text-gray-500 mt-1">2 người</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm font-bold text-green-600">60,000 ₫</span>
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                5
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm font-medium text-gray-900">Đồ ăn sáng</div>
-                                <div class="text-sm text-gray-500">Bánh mì và cà phê</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-lg font-bold text-blue-600">45,000 ₫</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-8 w-8">
-                                        <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
-                                            <span class="text-xs font-medium text-white">A</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                                    Tiền mặt
-                                </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                23/07/2024
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex flex-wrap gap-1">
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                </div>
-                                <div class="text-xs text-gray-500 mt-1">3 người</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-sm font-bold text-green-600">15,000 ₫</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Expense List Cards - Mobile -->
-        <div class="md:hidden space-y-4">
-            <div class="bg-white rounded-lg shadow-sm p-4">
-                <div class="flex justify-between items-start mb-3">
-                    <div class="flex-1">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-semibold text-gray-900">Đồ ăn tối</h3>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#1</span>
+                    <!-- Traffic Card -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-100 opacity-0">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Tổng chi tiêu</div>
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white text-lg">📊</div>
                         </div>
-                        <p class="text-sm text-gray-500 mb-3">Cơm tối cho cả nhóm</p>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center">
-                                <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
-                                    <span class="text-xs font-medium text-white">A</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
-                                    <div class="text-xs text-gray-500">25/07/2024</div>
-                                </div>
-                            </div>
-                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                                Tiền mặt
-                            </span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex flex-wrap gap-1">
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                <span class="text-xs text-gray-500 ml-2">3 người</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center pt-3 border-t">
-                            <span class="text-2xl font-bold text-blue-600">150,000 ₫</span>
-                            <span class="text-sm font-bold text-green-600">50,000 ₫/người</span>
+                        <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">350.000</div>
+                        <div class="flex items-center gap-1.5 text-sm font-medium">
+                            <span class="text-green-500 text-xs">▲</span>
+                            <span class="text-green-500">3.48%</span>
+                            <span class="text-gray-400 ml-1">So với hôm qua</span>
                         </div>
                     </div>
+            
+                    <!-- New Users Card -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-200 opacity-0">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Quỹ còn lại</div>
+                            <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white text-lg">👥</div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">200,000</div>
+                        <div class="flex items-center gap-1.5 text-sm font-medium">
+                            <span class="text-red-500 text-xs">▼</span>
+                            <span class="text-red-500">3.48%</span>
+                            <span class="text-gray-400 ml-1">Since last week</span>
+                        </div>
+                    </div>
+            
+                    <!-- Sales Card -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-300 opacity-0">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Chi tiêu của bạn</div>
+                            <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white text-lg">💰</div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">924.000</div>
+                        <div class="flex items-center gap-1.5 text-sm font-medium">
+                            <span class="text-red-500 text-xs">▼</span>
+                            <span class="text-red-500">1.10%</span>
+                            <span class="text-gray-400 ml-1">Since yesterday</span>
+                        </div>
+                    </div>
+            
+                    <!-- Performance Card -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 animate-slide-up delay-400 opacity-0">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Quỹ còn lại của bạn</div>
+                            <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center text-white text-lg">%</div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-3 leading-none">490.000</div>
+                        <div class="flex items-center gap-1.5 text-sm font-medium">
+                            <span class="text-green-500 text-xs">▲</span>
+                            <span class="text-green-500">12%</span>
+                            <span class="text-gray-400 ml-1">Since last month</span>
+                        </div>
+                    </div>
+            
                 </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-sm p-4">
-                <div class="flex justify-between items-start mb-3">
-                    <div class="flex-1">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-semibold text-gray-900">Điện thoại</h3>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#2</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">Thẻ điện thoại</p>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center">
-                                <div class="h-8 w-8 rounded-full bg-pink-500 flex items-center justify-center mr-3">
-                                    <span class="text-xs font-medium text-white">B</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Trần Thị B</div>
-                                    <div class="text-xs text-gray-500">24/07/2024</div>
-                                </div>
-                            </div>
-                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
-                                Chuyển khoản
-                            </span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex flex-wrap gap-1">
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                <span class="text-xs text-gray-500 ml-2">2 người</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center pt-3 border-t">
-                            <span class="text-2xl font-bold text-blue-600">80,000 ₫</span>
-                            <span class="text-sm font-bold text-green-600">40,000 ₫/người</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-sm p-4">
-                <div class="flex justify-between items-start mb-3">
-                    <div class="flex-1">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-semibold text-gray-900">Mua sắm</h3>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#3</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">Đồ dùng sinh hoạt</p>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center">
-                                <div class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
-                                    <span class="text-xs font-medium text-white">C</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Lê Văn C</div>
-                                    <div class="text-xs text-gray-500">20/07/2024</div>
-                                </div>
-                            </div>
-                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">
-                                Thẻ tín dụng
-                            </span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex flex-wrap gap-1">
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
-                                <span class="text-xs text-gray-500 ml-2">4 người</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center pt-3 border-t">
-                            <span class="text-2xl font-bold text-blue-600">200,000 ₫</span>
-                            <span class="text-sm font-bold text-green-600">50,000 ₫/người</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-sm p-4">
-                <div class="flex justify-between items-start mb-3">
-                    <div class="flex-1">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-semibold text-gray-900">Taxi</h3>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#4</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">Về nhà cuối tuần</p>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center">
-                                <div class="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center mr-3">
-                                    <span class="text-xs font-medium text-white">D</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Phạm Thị D</div>
-                                    <div class="text-xs text-gray-500">22/07/2024</div>
-                                </div>
-                            </div>
-                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                Ví điện tử
-                            </span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex flex-wrap gap-1">
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
-                                <span class="text-xs text-gray-500 ml-2">2 người</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center pt-3 border-t">
-                            <span class="text-2xl font-bold text-blue-600">120,000 ₫</span>
-                            <span class="text-sm font-bold text-green-600">60,000 ₫/người</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-sm p-4">
-                <div class="flex justify-between items-start mb-3">
-                    <div class="flex-1">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-semibold text-gray-900">Đồ ăn sáng</h3>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#5</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">Bánh mì và cà phê</p>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center">
-                                <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
-                                    <span class="text-xs font-medium text-white">A</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
-                                    <div class="text-xs text-gray-500">23/07/2024</div>
-                                </div>
-                            </div>
-                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                                Tiền mặt
-                            </span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex flex-wrap gap-1">
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
-                                <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
-                                <span class="text-xs text-gray-500 ml-2">3 người</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center pt-3 border-t">
-                            <span class="text-2xl font-bold text-blue-600">45,000 ₫</span>
-                            <span class="text-sm font-bold text-green-600">15,000 ₫/người</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Summary -->
-            <div class="bg-white rounded-lg shadow-sm p-4">
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
-                        Tổng cộng: 5 giao dịch
-                    </div>
-                    <div class="text-lg font-bold text-blue-600">
-                        595,000 ₫
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination (Optional) -->
-        <div class="mt-6 flex items-center justify-between">
-            <div class="text-sm text-gray-700">
-                Hiển thị <span class="font-medium">1</span> đến <span class="font-medium">5</span> trong tổng số <span class="font-medium">5</span> kết quả
-            </div>
-            <div class="flex space-x-2">
-                <button class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50" disabled>
-                    Trước
-                </button>
-                <button class="px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg hover:bg-blue-700">
-                    1
-                </button>
-                <button class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50" disabled>
-                    Sau
-                </button>
-            </div>
-        </div>
-
-        <!-- Add Expense Modal -->
-        <div id="addExpenseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
-            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-                <div class="p-6 border-b flex justify-between items-center sticky top-0 bg-white">
-                    <h2 class="text-xl font-semibold text-gray-800">Thêm chi tiêu mới</h2>
-                    <button id="closeModal" class="text-gray-500 hover:text-gray-700 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
+            <!-- Filters -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                <div class="flex items-center mb-4">
+                    <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                    </svg>
+                    <h2 class="text-lg font-semibold text-gray-800">Bộ lọc</h2>
                 </div>
                 
-                <div class="p-6 space-y-6">
-                    <!-- Amount -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Date Filter -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Số tiền (VNĐ) *</label>
-                        <input type="number" id="expenseAmount" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nhập số tiền">
-                    </div>
-
-                    <!-- Source -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Nguồn tiền</label>
-                        <select id="expenseSource" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            <option value="Tiền mặt">Tiền mặt</option>
-                            <option value="Chuyển khoản">Chuyển khoản</option>
-                            <option value="Thẻ tín dụng">Thẻ tín dụng</option>
-                            <option value="Ví điện tử">Ví điện tử</option>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Thời gian</label>
+                        <select id="dateRange" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="7days">7 ngày gần nhất</option>
+                            <option value="30days">30 ngày gần nhất</option>
+                            <option value="thisMonth">Tháng này</option>
+                            <option value="custom">Tùy chọn</option>
                         </select>
+                        
+                        <div id="customDateRange" class="mt-2 grid grid-cols-2 gap-2 hidden">
+                            <input type="date" id="startDate" class="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Từ ngày">
+                            <input type="date" id="endDate" class="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Đến ngày">
+                        </div>
                     </div>
 
-                    <!-- Item -->
+                    <!-- Member Filter -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Đồ mua *</label>
-                        <input type="text" id="expenseItem" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Mô tả món đồ đã mua">
-                    </div>
-
-                    <!-- Date -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Thời gian mua</label>
-                        <input type="date" id="expenseDate" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    </div>
-
-                    <!-- Payer -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Người chi tiền</label>
-                        <select id="expensePayer" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Thành viên</label>
+                        <select id="memberFilter" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="all">Tất cả thành viên</option>
                             <option value="Nguyễn Văn A">Nguyễn Văn A</option>
                             <option value="Trần Thị B">Trần Thị B</option>
                             <option value="Lê Văn C">Lê Văn C</option>
@@ -685,54 +112,629 @@
                         </select>
                     </div>
 
-                    <!-- Members to split -->
+                    <!-- Price Range Filter -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-3">Thành viên chia tiền *</label>
-                        <div class="grid grid-cols-2 gap-3">
-                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" name="splitMembers" value="Nguyễn Văn A" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                                <span class="ml-3 text-sm font-medium text-gray-700">Nguyễn Văn A</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" name="splitMembers" value="Trần Thị B" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                                <span class="ml-3 text-sm font-medium text-gray-700">Trần Thị B</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" name="splitMembers" value="Lê Văn C" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                                <span class="ml-3 text-sm font-medium text-gray-700">Lê Văn C</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" name="splitMembers" value="Phạm Thị D" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                                <span class="ml-3 text-sm font-medium text-gray-700">Phạm Thị D</span>
-                            </label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Khoảng giá (VNĐ)</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="number" id="minAmount" placeholder="Từ" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <input type="number" id="maxAmount" placeholder="Đến" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
-                        <p id="splitInfo" class="mt-2 text-sm text-gray-600">Chia cho 1 người • 0 ₫/người</p>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Image Upload -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Nhập từ hình ảnh</label>
-                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+            <div class="bg-white rounded-lg flex justify-between items-center p-6 mb-6">
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Danh sách Chi tiêu</h1>
+                <!-- Add Expense Button -->
+                <button id="addExpenseBtn" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium flex items-center transition-colors shadow-sm">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Thêm chi tiêu mới
+                </button>
+            </div>
+
+            <!-- Expense List Table - Desktop -->
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden hidden md:block">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <!-- Table Header -->
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    STT
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Đồ mua
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Số tiền (VNĐ)
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Người chi
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Nguồn tiền
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Ngày mua
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Thành viên chia
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Tiền/người
+                                </th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- Table Body -->
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    1
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">Đồ ăn tối</div>
+                                    <div class="text-sm text-gray-500">Cơm tối cho cả nhóm</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-lg font-bold text-blue-600">150,000 ₫</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-8 w-8">
+                                            <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
+                                                <span class="text-xs font-medium text-white">A</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                        Tiền mặt
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    25/07/2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">3 người</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-sm font-bold text-green-600">50,000 ₫</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    2
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">Điện thoại</div>
+                                    <div class="text-sm text-gray-500">Thẻ điện thoại</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-lg font-bold text-blue-600">80,000 ₫</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-8 w-8">
+                                            <div class="h-8 w-8 rounded-full bg-pink-500 flex items-center justify-center">
+                                                <span class="text-xs font-medium text-white">B</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Trần Thị B</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                                        Chuyển khoản
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    24/07/2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">2 người</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-sm font-bold text-green-600">40,000 ₫</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    3
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">Mua sắm</div>
+                                    <div class="text-sm text-gray-500">Đồ dùng sinh hoạt</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-lg font-bold text-blue-600">200,000 ₫</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-8 w-8">
+                                            <div class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center">
+                                                <span class="text-xs font-medium text-white">C</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Lê Văn C</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">
+                                        Thẻ tín dụng
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    20/07/2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">4 người</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-sm font-bold text-green-600">50,000 ₫</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    4
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">Taxi</div>
+                                    <div class="text-sm text-gray-500">Về nhà cuối tuần</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-lg font-bold text-blue-600">120,000 ₫</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-8 w-8">
+                                            <div class="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center">
+                                                <span class="text-xs font-medium text-white">D</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Phạm Thị D</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        Ví điện tử
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    22/07/2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">2 người</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-sm font-bold text-green-600">60,000 ₫</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    5
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">Đồ ăn sáng</div>
+                                    <div class="text-sm text-gray-500">Bánh mì và cà phê</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-lg font-bold text-blue-600">45,000 ₫</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-8 w-8">
+                                            <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
+                                                <span class="text-xs font-medium text-white">A</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                        Tiền mặt
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    23/07/2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">3 người</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="text-sm font-bold text-green-600">15,000 ₫</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Expense List Cards - Mobile -->
+            <div class="md:hidden space-y-4">
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900">Đồ ăn tối</h3>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#1</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-3">Cơm tối cho cả nhóm</p>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                        <span class="text-xs font-medium text-white">A</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
+                                        <div class="text-xs text-gray-500">25/07/2024</div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                    Tiền mặt
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    <span class="text-xs text-gray-500 ml-2">3 người</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pt-3 border-t">
+                                <span class="text-2xl font-bold text-blue-600">150,000 ₫</span>
+                                <span class="text-sm font-bold text-green-600">50,000 ₫/người</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900">Điện thoại</h3>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#2</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-3">Thẻ điện thoại</p>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-pink-500 flex items-center justify-center mr-3">
+                                        <span class="text-xs font-medium text-white">B</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">Trần Thị B</div>
+                                        <div class="text-xs text-gray-500">24/07/2024</div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                                    Chuyển khoản
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    <span class="text-xs text-gray-500 ml-2">2 người</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pt-3 border-t">
+                                <span class="text-2xl font-bold text-blue-600">80,000 ₫</span>
+                                <span class="text-sm font-bold text-green-600">40,000 ₫/người</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900">Mua sắm</h3>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#3</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-3">Đồ dùng sinh hoạt</p>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
+                                        <span class="text-xs font-medium text-white">C</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">Lê Văn C</div>
+                                        <div class="text-xs text-gray-500">20/07/2024</div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">
+                                    Thẻ tín dụng
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
+                                    <span class="text-xs text-gray-500 ml-2">4 người</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pt-3 border-t">
+                                <span class="text-2xl font-bold text-blue-600">200,000 ₫</span>
+                                <span class="text-sm font-bold text-green-600">50,000 ₫/người</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900">Taxi</h3>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#4</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-3">Về nhà cuối tuần</p>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center mr-3">
+                                        <span class="text-xs font-medium text-white">D</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">Phạm Thị D</div>
+                                        <div class="text-xs text-gray-500">22/07/2024</div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                    Ví điện tử
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">D</span>
+                                    <span class="text-xs text-gray-500 ml-2">2 người</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pt-3 border-t">
+                                <span class="text-2xl font-bold text-blue-600">120,000 ₫</span>
+                                <span class="text-sm font-bold text-green-600">60,000 ₫/người</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900">Đồ ăn sáng</h3>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">#5</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-3">Bánh mì và cà phê</p>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                        <span class="text-xs font-medium text-white">A</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
+                                        <div class="text-xs text-gray-500">23/07/2024</div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                    Tiền mặt
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">A</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">B</span>
+                                    <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">C</span>
+                                    <span class="text-xs text-gray-500 ml-2">3 người</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pt-3 border-t">
+                                <span class="text-2xl font-bold text-blue-600">45,000 ₫</span>
+                                <span class="text-sm font-bold text-green-600">15,000 ₫/người</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Summary -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                             </svg>
-                            <p class="text-sm text-gray-600 mb-2">Tải lên hóa đơn hoặc ảnh chụp</p>
-                            <input type="file" accept="image/*" id="imageUpload" class="hidden">
-                            <label for="imageUpload" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg cursor-pointer transition-colors">
-                                Chọn ảnh
-                            </label>
-                            <p id="imageFileName" class="mt-2 text-sm text-green-600 hidden"></p>
+                            Tổng cộng: 5 giao dịch
+                        </div>
+                        <div class="text-lg font-bold text-blue-600">
+                            595,000 ₫
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Action Buttons -->
-                    <div class="flex gap-3 pt-4">
-                        <button id="submitExpense" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-medium transition-colors">
-                            Thêm chi tiêu
+            <!-- Pagination (Optional) -->
+            <div class="mt-6 flex items-center justify-between">
+                <div class="text-sm text-gray-700">
+                    Hiển thị <span class="font-medium">1</span> đến <span class="font-medium">5</span> trong tổng số <span class="font-medium">5</span> kết quả
+                </div>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50" disabled>
+                        Trước
+                    </button>
+                    <button class="px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg hover:bg-blue-700">
+                        1
+                    </button>
+                    <button class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50" disabled>
+                        Sau
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add Expense Modal -->
+            <div id="addExpenseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+                <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b flex justify-between items-center sticky top-0 bg-white">
+                        <h2 class="text-xl font-semibold text-gray-800">Thêm chi tiêu mới</h2>
+                        <button id="closeModal" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
                         </button>
-                        <button id="cancelExpense" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-6 rounded-lg font-medium transition-colors">
-                            Hủy
-                        </button>
+                    </div>
+                    
+                    <div class="p-6 space-y-6">
+                        <!-- Amount -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Số tiền (VNĐ) *</label>
+                            <input type="number" id="expenseAmount" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nhập số tiền">
+                        </div>
+
+                        <!-- Source -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nguồn tiền</label>
+                            <select id="expenseSource" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="Tiền mặt">Tiền mặt</option>
+                                <option value="Chuyển khoản">Chuyển khoản</option>
+                                <option value="Thẻ tín dụng">Thẻ tín dụng</option>
+                                <option value="Ví điện tử">Ví điện tử</option>
+                            </select>
+                        </div>
+
+                        <!-- Item -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Đồ mua *</label>
+                            <input type="text" id="expenseItem" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Mô tả món đồ đã mua">
+                        </div>
+
+                        <!-- Date -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Thời gian mua</label>
+                            <input type="date" id="expenseDate" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <!-- Payer -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Người chi tiền</label>
+                            <select id="expensePayer" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="Nguyễn Văn A">Nguyễn Văn A</option>
+                                <option value="Trần Thị B">Trần Thị B</option>
+                                <option value="Lê Văn C">Lê Văn C</option>
+                                <option value="Phạm Thị D">Phạm Thị D</option>
+                            </select>
+                        </div>
+
+                        <!-- Members to split -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Thành viên chia tiền *</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                    <input type="checkbox" name="splitMembers" value="Nguyễn Văn A" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <span class="ml-3 text-sm font-medium text-gray-700">Nguyễn Văn A</span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                    <input type="checkbox" name="splitMembers" value="Trần Thị B" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <span class="ml-3 text-sm font-medium text-gray-700">Trần Thị B</span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                    <input type="checkbox" name="splitMembers" value="Lê Văn C" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <span class="ml-3 text-sm font-medium text-gray-700">Lê Văn C</span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                    <input type="checkbox" name="splitMembers" value="Phạm Thị D" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <span class="ml-3 text-sm font-medium text-gray-700">Phạm Thị D</span>
+                                </label>
+                            </div>
+                            <p id="splitInfo" class="mt-2 text-sm text-gray-600">Chia cho 1 người • 0 ₫/người</p>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nhập từ hình ảnh</label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="text-sm text-gray-600 mb-2">Tải lên hóa đơn hoặc ảnh chụp</p>
+                                <input type="file" accept="image/*" id="imageUpload" class="hidden">
+                                <label for="imageUpload" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg cursor-pointer transition-colors">
+                                    Chọn ảnh
+                                </label>
+                                <p id="imageFileName" class="mt-2 text-sm text-green-600 hidden"></p>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-3 pt-4">
+                            <button id="submitExpense" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-medium transition-colors">
+                                Thêm chi tiêu
+                            </button>
+                            <button id="cancelExpense" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-6 rounded-lg font-medium transition-colors">
+                                Hủy
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

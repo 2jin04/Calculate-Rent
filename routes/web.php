@@ -22,15 +22,11 @@ Route::get('/auth/facebook/callback', [SocialAuthController::class, 'handleFaceb
 
 // Route::get('/auth/{provider}/callback', [AuthController::class, 'handleOAuthCallback']);
 
-
-
 //Route cần đăng nhập
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
-    
     //Đăng xuất
     Route::get('/logout', [SocialAuthController::class, 'logout'])->name('logout');
-
     //Tạo phòng và gia nhập
     Route::get('/rooms', [RoomController::class, 'index']);
     Route::post('/rooms', [RoomController::class, 'store']);

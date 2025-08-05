@@ -30,6 +30,10 @@
               src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/books.png"
               alt="Finder"
             />
+            @if (Auth::check())
+            <h2>{{ Auth::user()->name }}!</h2>
+            <a href="{{ route('logout') }}">Đăng xuất</a>
+            @endif
           </div>
         </div>
       </div>

@@ -51,4 +51,28 @@ class RoomController extends Controller
             ], 500);
         };
     }
+
+    //Hiện thông tin room
+    public function show(Room $room)
+    {
+        try {
+            // Kiểm tra quyền truy cập
+            if (!$room->members()->where('user_id', Auth::id())->exists()) {
+                return redirect('rooms')->with('toast_error', 'Bạn không có quyền truy cập phòng này!');
+            }
+
+            $room->load(['creator', 'members']);
+
+            return response()->json([
+                'success' => true,
+                'data' => $room
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Lỗi khi lấy thông tin room: ' . $e->getMessage()
+            ], 500);
+        }
+    }
 }
