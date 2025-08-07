@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Services;
+
+use App\Models\Expense;
+use App\Models\Room;
+use App\Models\User;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Collection;
+
+class ExpenseService
+{
+    public function getExpensesByRoom($roomId): Collection
+    {
+        return Expense::byRoom($roomId)
+            ->with(['creator', 'paidByUser'])
+            ->orderBy('created_at', 'desc')
+            ->get();
+    }
+
+    
+}

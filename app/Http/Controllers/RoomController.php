@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\Controller;
 use App\Services\RoomService;
+use App\Services\ExpenseService;
 use App\Models\Room;
 use PhpParser\Node\Stmt\Catch_;
 
@@ -88,6 +89,8 @@ class RoomController extends Controller
             }
 
             $room->load(['creator', 'members']);
+
+            $expenses = $this->expenseService->getExpensesByRoom($id);
 
             return view('client.rooms.index', compact('room'));
 
