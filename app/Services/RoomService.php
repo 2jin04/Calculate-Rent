@@ -42,7 +42,7 @@ class RoomService
     public function joinRoom(string $code, User $user, string $role = 'members') 
     {
         return DB::transaction(function () use ($code, $user, $role) {
-            $room = Room::where('code', $code)->fisrtOrFail();
+            $room = Room::where('code', $code)->firstOrFail();
 
             //Kiểm tra user đã trong room chưa
             if ($room->members()->where('user_id', $user->id)->exists()) {
@@ -51,8 +51,8 @@ class RoomService
 
             //Theem user vào room
             $room->members()->attach($user->id, [
-                'room' => $role,
-                'join_at' => now(),
+                'role' => $role,
+                'joined_at' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

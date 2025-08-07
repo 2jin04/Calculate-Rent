@@ -21,7 +21,7 @@ class RoomController extends Controller
 
     public function index()
     {
-        return view('client.rooms.index');
+        return view('client.rooms.create');
     }
 
     //Tạo room mới
@@ -29,27 +29,38 @@ class RoomController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'balace' => 'nullable|numeric|min:0',
         ]);
 
         try {
             $room = $this->roomService->createRoom(
-                $request->only(['name', 'balance']),
+                $request->only(['name']),
                 Auth::user()
             );
 
-            return response()->json([
-                'success' => true,
-                'message' => 'Room được tạo thành công!',
-                'data' => $room
-            ], 201);
+            return redirect('/rooms/' . $room->code)->with('toast_success', 'Tạo phòng thành công');
             
         } Catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Lỗi khi tạo room: ' . $e->getMessage()
-            ], 500);
+            return redirect()->back()->with('toast_error', 'Đã xảy ra lỗi khi tạo phòng!');
         };
+    }
+
+    public function join(Request $request)
+    {
+        $request->validate([
+            'code' => 'required|string|exists:rooms,code',
+        ]);
+
+        try {
+            $room = $this->roomService->joinRoom(
+                $request->code,
+                Auth::user()
+            );
+
+            return redirect('/rooms/' . $room->code)->with('toast_success', 'Tham gia phòng thành công');
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with('toast_error', 'Đã xảy ra lỗi khi tham gia phòng!');
+        }
     }
 
     //Hiện thông tin room
@@ -63,16 +74,10 @@ class RoomController extends Controller
 
             $room->load(['creator', 'members']);
 
-            return response()->json([
-                'success' => true,
-                'data' => $room
-            ]);
+            return view('client.rooms.index', compact('room'));
 
         } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Lỗi khi lấy thông tin room: ' . $e->getMessage()
-            ], 500);
+            return redirect()->back()->with('toast_error', 'Lỗi khi truy cập phòng!');
         }
     }
 }

@@ -24,6 +24,12 @@ class Room extends Model
         'updated_at' => 'datetime',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'code';
+    }
+
+
     // Kết nối với User
     public function creator() 
     {
