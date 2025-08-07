@@ -17,7 +17,7 @@ class Authenticate
     public function handle(Request $request, Closure $next): Response
     {
         if (!Auth::check()) {
-            return redirect()->route('login')->with('toast_error', 'Bạn cần phải đăng nhập!');
+            return redirect()->route('login')->with('toast_error', 'Trước tiên bạn cần phải đăng nhập!');
         }
         return $next($request);
     }

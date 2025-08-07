@@ -33,4 +33,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/rooms/{room}', [RoomController::class, 'show']);
     Route::put('/rooms/{room}', [RoomController::class, 'update']);
     Route::post('/rooms/join', [RoomController::class, 'join']);
+    Route::get('/room/join/{room}', [RoomController::class, 'joinLink']);
 });

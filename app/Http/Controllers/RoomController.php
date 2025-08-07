@@ -63,6 +63,21 @@ class RoomController extends Controller
         }
     }
 
+    public function joinLink($code)
+    {
+        try {
+            $room = $this->roomService->joinRoom(
+                $code,
+                Auth::user()
+            );
+
+            return redirect('/rooms/' . $room->code)->with('toast_success', 'Tham gia phòng thành công');
+
+        } catch (\Exception) {
+            return redirect()->back()->with('toast_error', 'Đã xảy ra lỗi khi tham gia phòng!');
+        }
+    }
+
     //Hiện thông tin room
     public function show(Room $room)
     {
@@ -77,7 +92,7 @@ class RoomController extends Controller
             return view('client.rooms.index', compact('room'));
 
         } catch (\Exception $e) {
-            return redirect()->back()->with('toast_error', 'Lỗi khi truy cập phòng!');
+            return redirect()->back()->with('toast_error', 'Lỗi khi truy cập phòng này!');
         }
     }
 }
