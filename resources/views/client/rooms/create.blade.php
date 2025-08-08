@@ -3,6 +3,9 @@
 @section('title', 'Tạo, gia nhập phòng')
 
 @section('content')
+@foreach ($rooms as $room)
+    <a href="{{ url('/rooms', $room->code ) }}">Phòng: {{ $room->name }}</a> <br>
+@endforeach
     <div class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center">
         <div class="flex gap-20">
             <!-- Tạo phòng mới -->

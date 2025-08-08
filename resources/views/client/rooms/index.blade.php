@@ -170,26 +170,26 @@
                         
                         <!-- Table Body -->
                         <tbody class="bg-white divide-y divide-gray-200">
+                            @foreach ($expenses as $expense)
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                     1
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm font-medium text-gray-900">Đồ ăn tối</div>
+                                    <div class="text-sm font-medium text-gray-900">{{ $expense->title }}</div>
                                     <div class="text-sm text-gray-500">Cơm tối cho cả nhóm</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="text-lg font-bold text-blue-600">150,000 ₫</span>
+                                    <span class="text-lg font-bold text-blue-600">{{ number_format($expense->amount) }} ₫</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-8 w-8">
-                                            <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
-                                                <span class="text-xs font-medium text-white">A</span>
-                                            </div>
+                                            <!-- <span class="text-xs font-medium text-white">A</span> -->
+                                            <img src="{{ $expense->paidByUser->avatar }}" class="h-8 w-8 rounded-full" alt="avatar-user">
                                         </div>
                                         <div class="ml-3">
-                                            <div class="text-sm font-medium text-gray-900">Nguyễn Văn A</div>
+                                            <div class="text-sm font-medium text-gray-900">{{ $expense->paidByUser->name }}</div>
                                         </div>
                                     </div>
                                 </td>
@@ -199,7 +199,7 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                    25/07/2024
+                                    {{ $expense->created_at->format('d/m/Y') }}
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex flex-wrap gap-1">
@@ -213,6 +213,7 @@
                                     <span class="text-sm font-bold text-green-600">50,000 ₫</span>
                                 </td>
                             </tr>
+                            @endforeach
 
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -646,27 +647,16 @@
                     </div>
                     
                     <div class="p-6 space-y-6">
-                        <!-- Amount -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Số tiền (VNĐ) *</label>
-                            <input type="number" id="expenseAmount" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nhập số tiền">
-                        </div>
-
-                        <!-- Source -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Nguồn tiền</label>
-                            <select id="expenseSource" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="Tiền mặt">Tiền mặt</option>
-                                <option value="Chuyển khoản">Chuyển khoản</option>
-                                <option value="Thẻ tín dụng">Thẻ tín dụng</option>
-                                <option value="Ví điện tử">Ví điện tử</option>
-                            </select>
-                        </div>
-
                         <!-- Item -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Đồ mua *</label>
                             <input type="text" id="expenseItem" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Mô tả món đồ đã mua">
+                        </div>
+
+                        <!-- Amount -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Số tiền (VNĐ) *</label>
+                            <input type="number" id="expenseAmount" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nhập số tiền">
                         </div>
 
                         <!-- Date -->

@@ -14,15 +14,19 @@ use PhpParser\Node\Stmt\Catch_;
 class RoomController extends Controller
 {
     protected $roomService;
+    protected $expenseService;
 
-    public function __construct(RoomService $roomService)
+    public function __construct(RoomService $roomService, ExpenseService $expenseService)
     {
         $this->roomService = $roomService;
+        $this->expenseService = $expenseService;
     }
 
     public function index()
     {
-        return view('client.rooms.create');
+        $rooms = Room::orderBy('id', 'desc')->get();
+
+        return view('client.rooms.create', compact('rooms'));
     }
 
     //Tạo room mới
@@ -90,12 +94,12 @@ class RoomController extends Controller
 
             $room->load(['creator', 'members']);
 
-            $expenses = $this->expenseService->getExpensesByRoom($id);
+            $expenses = $this->expenseService->getExpensesByRoom($room);
 
-            return view('client.rooms.index', compact('room'));
+            return view('client.rooms.index', compact('room', 'expenses'));
 
         } catch (\Exception $e) {
-            return redirect()->back()->with('toast_error', 'Lỗi khi truy cập phòng này!');
+            return redirect()->back()->with('toast_error', 'Lỗi khi truy cập phòng này!'. $e->getMessage());
         }
     }
 }

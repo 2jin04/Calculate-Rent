@@ -11,9 +11,9 @@ use Illuminate\Support\Collection;
 
 class ExpenseService
 {
-    public function getExpensesByRoom($roomId): Collection
+    public function getExpensesByRoom(Room $room): Collection
     {
-        return Expense::byRoom($roomId)
+        return Expense::where('room_id', $room->id)
             ->with(['creator', 'paidByUser'])
             ->orderBy('created_at', 'desc')
             ->get();
